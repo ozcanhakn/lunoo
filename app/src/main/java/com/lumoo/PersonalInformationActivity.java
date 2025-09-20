@@ -81,9 +81,9 @@ public class PersonalInformationActivity extends AppCompatActivity {
 
     Bitmap selectedImageBitmap;
 
-    private static final String SUPABASE_URL = "https://iauuehrfhmzhnfsnsjdx.supabase.co";
-    private static final String SUPABASE_APIKEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlhdXVlaHJmaG16aG5mc25zamR4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc4NjQ2NzAsImV4cCI6MjA3MzQ0MDY3MH0.GnwTJFqC_cLAuKt7dAlSjlVIBfy4O9nTVWyn3d2wzRM";
-    private static final String SUPABASE_STORAGE_ENDPOINT = SUPABASE_URL + "/storage/v1/object/profile-images/";
+    private static final String SUPABASE_URL = "";
+    private static final String SUPABASE_APIKEY = "";
+    private static final String SUPABASE_STORAGE_ENDPOINT = SUPABASE_URL + "";
 
     private OkHttpClient httpClient;
 
