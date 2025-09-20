@@ -68,7 +68,7 @@ public class MyApp extends Application implements Application.ActivityLifecycleC
     @Override public void onActivityDestroyed(Activity activity) {}
 
 
-    // MainActivity içine ekleyin
+    // MainActivity içine eklemeyi unutmamalıyım.
     private void setupCallListener() {
         FirebaseAuth auth = FirebaseAuth.getInstance();
 
