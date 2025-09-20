@@ -1,6 +1,7 @@
-*.iml
-.gradle
-/local.properties
+# Android / Gradle / Studio
+
+.gradle/
+local.properties
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
@@ -13,3 +14,22 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Keystore files
+*.jks
+*.keystore
+
+# Google Services (API keys, config)
+google-services.json
+
+# Android Studio Profiling
+*.hprof
+
+# Logs
+*.log
+
+# Gradle Wrapper
+gradlew
+gradlew.bat
+gradle-wrapper.jar
+gradle-wrapper.properties
