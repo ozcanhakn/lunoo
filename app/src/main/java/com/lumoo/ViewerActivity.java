@@ -1713,7 +1713,7 @@ public class ViewerActivity extends AppCompatActivity {
 
 
 
-    // EditText focus change listener ekleyin
+    // EditText focus change listener ekle
     private void setupEditTextListeners() {
         edtMessageBox.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
