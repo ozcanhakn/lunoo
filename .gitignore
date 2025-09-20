@@ -19,6 +19,8 @@ local.properties
 *.jks
 *.keystore
 
+*.apk
+
 # Google Services (API keys, config)
 google-services.json
 
