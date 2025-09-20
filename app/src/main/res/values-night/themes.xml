@@ -1,0 +1,103 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Lumoo" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:navigationBarColor">#0A1014</item>
+        <item name="android:statusBarColor">#0A1014</item>
+        <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+
+    </style>
+
+    <!-- Modern TextInputLayout Style -->
+    <style name="ModernTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/accent_primary</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxCornerRadiusTopStart">16dp</item>
+        <item name="boxCornerRadiusTopEnd">16dp</item>
+        <item name="boxCornerRadiusBottomStart">16dp</item>
+        <item name="boxCornerRadiusBottomEnd">16dp</item>
+        <item name="hintTextColor">@color/text_tertiary</item>
+        <item name="android:textColorHint">@color/text_tertiary</item>
+        <item name="boxBackgroundColor">@color/surface_glassmorphism</item>
+    </style>
+
+    <!-- Modern Spinner Style -->
+    <style name="ModernSpinner" parent="Widget.AppCompat.Spinner">
+        <item name="android:background">@drawable/modern_input_bg</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">48dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <!-- Modern Button Style -->
+    <style name="ModernButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/modern_gradient_button</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:elevation">12dp</item>
+        <item name="android:stateListAnimator">@animator/button_elevation</item>
+        <item name="cornerRadius">28dp</item>
+    </style>
+
+    <!-- Card Style -->
+    <style name="GlassmorphismCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">24dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardBackgroundColor">@android:color/transparent</item>
+        <item name="contentPadding">24dp</item>
+    </style>
+
+    <!-- HomeActivity için özel tema -->
+    <style name="HomeActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#0A1014</item>
+        <item name="colorPrimaryDark">#0A1014</item>
+        <item name="colorAccent">#0A1014</item>
+        <item name="android:statusBarColor">#0A1014</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+    <!-- API 21+ için -->
+    <style name="HomeActivityTheme.V21" parent="HomeActivityTheme">
+        <item name="android:statusBarColor">#0A1014</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+    <!-- styles.xml dosyanıza bu style'ı ekleyin -->
+
+    <style name="CustomDialogTheme" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.7</item>
+    </style>
+
+    <!-- styles.xml dosyanıza bu style'ları ekleyin -->
+
+    <style name="CustomSpinnerStyle" parent="Widget.AppCompat.Spinner">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="CustomSpinnerDropDown" parent="Widget.AppCompat.Spinner.DropDown">
+        <item name="android:background">#2A3040</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:padding">12dp</item>
+    </style>
+</resources>

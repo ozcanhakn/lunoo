@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:background="@color/transparent"
+    android:gravity="center_vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="32dp"
+        android:layout_height="24dp"
+        app:cardCornerRadius="4dp"
+        app:cardBackgroundColor="#1E2B35"
+        app:cardElevation="2dp"
+        android:layout_marginEnd="12dp">
+
+        <ImageView
+            android:id="@+id/image_flag"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/text_country_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:text="Türkiye" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/quantum_ic_arrow_back_grey600_24"
+        app:tint="#80FFFFFF"
+        android:visibility="gone"
+        android:layout_marginStart="8dp" />
+
+</LinearLayout>

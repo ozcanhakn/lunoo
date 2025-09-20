@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShowStory"
+    android:background="#000">
+
+    <jp.shts.android.storiesprogressview.StoriesProgressView
+        android:id="@+id/stories"
+        android:layout_width="match_parent"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_height="3dp"
+        android:layout_gravity="top"
+        android:layout_marginTop="8dp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/iv_ss"
+            android:clickable="true"
+            android:scaleType="centerCrop"/>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kullanıcı Adı"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:id="@+id/tv_uname_ss"
+        android:fontFamily="@font/urbanist_semibold"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="70dp"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/iv_storyview"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:id="@+id/et_story"
+        android:layout_width="match_parent"
+        android:background="@drawable/show_story_send_message_bg"
+        android:layout_alignParentBottom="true"
+        android:layout_height="46dp"
+        android:visibility="gone"
+        android:textSize="14sp"
+        android:textColor="#fff"
+        android:fontFamily="@font/urbanist_semibold"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="24dp"
+        android:drawableRight="@drawable/show_story_icon"
+        android:clickable="true"
+        android:paddingLeft="40dp"
+        android:translationZ="90dp"
+        android:paddingRight="40dp"/>
+
+    <View
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:id="@+id/view_prev"/>
+
+    <View
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:id="@+id/view_next"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp"/>
+
+
+</RelativeLayout>

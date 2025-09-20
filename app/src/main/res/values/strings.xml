@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">LUNOO</string>
+    <string name="lets_go">Hadi Başlayalım</string>
+    <string name="login">Giriş Yap</string>
+    <string name="signin">Oturum Aç</string>
+    <string name="privacy">Gizlilik</string>
+    <string name="forget_password">Şifremi Unuttum</string>
+    <string name="password">Şifre</string>
+    <string name="password1">Parola</string>
+    <string name="epost">E-posta</string>
+    <string name="help">Yardım</string>
+    <string name="find_friend">Arkadaş bul, sohbet et ve eğlen</string>
+    <string name="create_account_explain">Hesap oluşturmanızın ardından LUNOO\'ya</string>
+    <string name="create_account_explain1">giriş yapıp sohbete başlayabilirsiniz.</string>
+    <string name="invitation_code">Davet Kodu (Zorunlu Değil)</string>
+    <string name="now_you_little">Hadi seni biraz tanıyalım</string>
+    <string name="name">İsim</string>
+    <string name="surname">Soyisim</string>
+    <string name="username">Kullanıcı Adı</string>
+    <string name="birtdate">Yaşınız 18-99</string>
+    <string name="horoskope">Burç</string>
+    <string name="interest">İlgi Alanı 1 (zorunlu değil)</string>
+    <string name="interest1">İlgi Alanı 2 (zorunlu değil)</string>
+    <string name="interest2">İlgi Alanı 3 (zorunlu değil)</string>
+    <string name="continue1">Devam et</string>
+    <string name="starting">Başlayalım</string>
+    <string name="about_yourself">Bize kendinden bahset</string>
+    <string name="ready1">LUNOO\'da arkadaş edinmeye artık hazırsın.</string>
+    <string name="ready2">Yayınlara katılabilir, sohbet edilebilir,</string>
+    <string name="ready3">dostluklar kurabilirsin!</string>
+    <string name="continue2">İlerle</string>
+    <string name="pls_enter_mail">Lütfen mail adresinizi girin</string>
+    <string name="already_mail">Bu mail adresiyle zaten bir hesap mevcut</string>
+    <string name="pls_enter_password">Lütfen bir parola oluşturun</string>
+    <string name="password_long">Parola uzunluğu en az 8 karakter olmalıdır</string>
+    <string name="password_long1"> Parolada en az bir büyük harf, bir küçük harf ve bir rakam bulunmalıdır</string>
+    <string name="suc_register">Başarıyla hesap oluşturuldu</string>
+    <string name="failed_register">Hesap oluşturma başarısız oldu</string>
+    <string name="join_app">LUNOO\'YA KATIL</string>
+    <string name="click_join_explain">Katıl\'a dokunduğunda Şartlarımızı kabul etmiş olacaksın. Gizlilik Politikamızı ve Çerez Politikamızı inceleyerek verilerini nasıl işlediğimizi öğrenebilirsin.</string>
+    <string name="build_friendships">ARKADAŞ BUL, SOHBET ET &amp; EĞLEN</string>
+    <string name="succlogin">Başarıyla giriş yapıldı</string>
+    <string name="failedlogin">Giriş yapılırken hata oluştu</string>
+    <string name="message">Mesaj</string>
+    <string name="main">Ana Ekran</string>
+    <string name="settings">Ayarlar</string>
+    <string name="profile">Profil</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="live_stream">Canlı Yayınlar</string>
+    <string name="online">Online</string>
+    <string name="default_web_client_id">124045950920-7s94hc6o8v1jqsr26ftb6agoaig1cvg5.apps.googleusercontent.com</string>
+
+</resources>

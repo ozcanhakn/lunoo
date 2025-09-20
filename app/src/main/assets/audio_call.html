@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        #audio-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
+            border: 4px solid white;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+        .caller-name {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .call-status {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+        .audio-controls {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .control-button {
+            width: 70px;
+            height: 70px;
+            border-radius: 35px;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .mute-button {
+            background: #ff4757;
+        }
+        .mute-button.muted {
+            background: #57606f;
+        }
+        .end-call-button {
+            background: #ff4757;
+            width: 80px;
+            height: 80px;
+            border-radius: 40px;
+        }
+        .audio-waves {
+            width: 200px;
+            height: 80px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+        .wave {
+            width: 4px;
+            height: 20px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 2px;
+            animation: wave 1.2s infinite ease-in-out;
+        }
+        .wave:nth-child(2) { animation-delay: 0.1s; }
+        .wave:nth-child(3) { animation-delay: 0.2s; }
+        .wave:nth-child(4) { animation-delay: 0.3s; }
+        .wave:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes wave {
+            0%, 40%, 100% { height: 20px; }
+            20% { height: 40px; }
+        }
+    </style>
+</head>
+<body>
+<div id="audio-container">
+    <img id="profile-image" class="profile-image" src="" alt="Profile">
+    <div id="caller-name" class="caller-name">Arayan</div>
+    <div id="call-status" class="call-status">Sesli arama bağlanıyor...</div>
+
+    <div class="audio-waves">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <div class="audio-controls">
+        <button id="mute-button" class="control-button mute-button">
+            <span>🎤</span>
+        </button>
+        <button id="end-call-button" class="control-button end-call-button">
+            <span>📞</span>
+        </button>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.4.7/peerjs.min.js"></script>
+
+<script>
+    let peer;
+    let localStream;
+    let remoteStream;
+    let currentPeerId = '';
+    let isMuted = false;
+
+    // Android ile iletişim fonksiyonları
+    window.toggleAudio = function(isEnabled) {
+        console.log('Toggle audio: ' + isEnabled);
+        if (localStream) {
+            const audioTracks = localStream.getAudioTracks();
+            if (audioTracks.length > 0) {
+                audioTracks[0].enabled = isEnabled;
+                isMuted = !isEnabled;
+                updateMuteButton();
+                console.log('Audio track enabled: ' + audioTracks[0].enabled);
+
+                // Android'e durumu bildir
+                try {
+                    Android.onAudioStateChanged(isEnabled);
+                } catch (e) {
+                    console.log('Android interface not available');
+                }
+            }
+        }
+    }
+
+    window.endCall = function() {
+        console.log('Ending audio call...');
+        if (peer) {
+            peer.destroy();
+        }
+        if (localStream) {
+            localStream.getTracks().forEach(track => track.stop());
+        }
+        document.getElementById('call-status').innerText = 'Sesli arama sonlandırıldı';
+    }
+
+    window.init = function(peerId) {
+        console.log('Initializing audio call with ID: ' + peerId);
+        currentPeerId = peerId;
+        initializePeer(peerId);
+    }
+
+    window.startCall = function(remotePeerId) {
+        console.log('Starting audio call to: ' + remotePeerId);
+        makeCall(remotePeerId);
+    }
+
+    window.setCallerInfo = function(name, imageUrl) {
+        if (name) {
+            document.getElementById('caller-name').innerText = name;
+        }
+        if (imageUrl) {
+            document.getElementById('profile-image').src = imageUrl;
+        }
+    }
+
+    async function initializePeer(peerId) {
+        try {
+            document.getElementById('call-status').innerText = 'Mikrofona erişiliyor...';
+
+            // Sadece mikrofon erişimi (video yok)
+            localStream = await navigator.mediaDevices.getUserMedia({
+                video: false, // SESLİ ARAMA - VIDEO KAPALI
+                audio: {
+                    echoCancellation: true,
+                    noiseSuppression: true,
+                    autoGainControl: true
+                }
+            });
+
+            document.getElementById('call-status').innerText = 'Ses bağlantısı kuruluyor...';
+
+            // PeerJS bağlantısı
+            peer = new Peer(peerId, {
+                debug: 3,
+                config: {
+                    iceServers: [
+                        { urls: 'stun:stun.l.google.com:19302' },
+                        { urls: 'stun:stun1.l.google.com:19302' }
+                    ]
+                }
+            });
+
+            peer.on('open', function(id) {
+                console.log('Audio peer connected with ID: ', id);
+                document.getElementById('call-status').innerText = 'Ses bağlantısı hazır';
+                // Android tarafına bağlantının hazır olduğunu bildir
+                Android.onPeerConnected();
+            });
+
+            peer.on('call', function(call) {
+                console.log('Incoming audio call from: ', call.peer);
+                document.getElementById('call-status').innerText = 'Gelen sesli arama...';
+
+                call.answer(localStream);
+
+                call.on('stream', function(stream) {
+                    console.log('Remote audio stream received');
+                    document.getElementById('call-status').innerText = 'Sesli arama bağlandı';
+                    remoteStream = stream;
+
+                    // Ses çıkışını ayarla
+                    const audioElement = new Audio();
+                    audioElement.srcObject = stream;
+                    audioElement.play();
+                });
+
+                call.on('error', function(err) {
+                    console.error('Audio call error: ', err);
+                    document.getElementById('call-status').innerText = 'Sesli arama hatası: ' + err;
+                });
+            });
+
+            peer.on('error', function(err) {
+                console.error('Audio peer error: ', err);
+                document.getElementById('call-status').innerText = 'Ses hatası: ' + err.type;
+            });
+
+            // Buton event listener'ları
+            document.getElementById('mute-button').addEventListener('click', function() {
+                toggleAudio(isMuted);
+            });
+
+            document.getElementById('end-call-button').addEventListener('click', function() {
+                endCall();
+                Android.showToast('Sesli arama sonlandırıldı');
+            });
+
+        } catch (error) {
+            console.error('Error initializing audio call: ', error);
+            document.getElementById('call-status').innerText = 'Hata: ' + error.message;
+            Android.showToast('Ses hatası: ' + error.message);
+        }
+    }
+
+    function makeCall(remotePeerId) {
+        console.log('Making audio call to: ', remotePeerId);
+        document.getElementById('call-status').innerText = 'Sesli arama yapılıyor...';
+
+        if (!peer || !localStream) {
+            console.error('Audio peer or local stream not ready');
+            document.getElementById('call-status').innerText = 'Ses bağlantısı hazır değil';
+            return;
+        }
+
+        const call = peer.call(remotePeerId, localStream);
+
+        call.on('stream', function(stream) {
+            console.log('Audio call stream received');
+            document.getElementById('call-status').innerText = 'Sesli arama bağlandı';
+            remoteStream = stream;
+
+            // Ses çıkışını ayarla
+            const audioElement = new Audio();
+            audioElement.srcObject = stream;
+            audioElement.play();
+        });
+
+        call.on('close', function() {
+            console.log('Audio call closed');
+            document.getElementById('call-status').innerText = 'Sesli arama sonlandı';
+        });
+
+        call.on('error', function(err) {
+            console.error('Audio call error: ', err);
+            document.getElementById('call-status').innerText = 'Sesli arama hatası: ' + err;
+        });
+    }
+
+    function updateMuteButton() {
+        const muteButton = document.getElementById('mute-button');
+        if (isMuted) {
+            muteButton.classList.add('muted');
+            muteButton.innerHTML = '<span>🔇</span>';
+        } else {
+            muteButton.classList.remove('muted');
+            muteButton.innerHTML = '<span>🎤</span>';
+        }
+    }
+
+    // Hata ayıklama için global erişim
+    window.getPeer = function() { return peer; };
+    window.getLocalStream = function() { return localStream; };
+    window.getRemoteStream = function() { return remoteStream; };
+
+</script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/incoming_call_gradient">
+
+    <!-- Animated background particles -->
+    <View
+        android:id="@+id/particle1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/particle_circle"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="50dp"
+        android:alpha="0.6" />
+
+    <View
+        android:id="@+id/particle2"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@drawable/particle_circle"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="30dp"
+        android:alpha="0.4" />
+
+    <!-- Top status bar -->
+    <LinearLayout
+        android:id="@+id/statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="20dp"
+        android:gravity="center"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Incoming Call"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:alpha="0.8" />
+
+    </LinearLayout>
+
+    <!-- Main content container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="40dp">
+
+        <!-- Profile image with animated ring -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp">
+
+            <!-- Outer animated ring -->
+            <View
+                android:id="@+id/pulseRing1"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:background="@drawable/pulse_ring"
+                android:layout_centerInParent="true" />
+
+            <!-- Inner animated ring -->
+            <View
+                android:id="@+id/pulseRing2"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:background="@drawable/pulse_ring_inner"
+                android:layout_centerInParent="true" />
+
+            <!-- Profile image -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImage"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/default_avatar"
+                app:civ_border_width="4dp"
+                app:civ_border_color="@android:color/white" />
+
+        </RelativeLayout>
+
+        <!-- Caller information -->
+        <TextView
+            android:id="@+id/callerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arayan İsmi"
+            android:textColor="@android:color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="0"
+            android:shadowDy="2"
+            android:shadowRadius="4" />
+
+        <TextView
+            android:id="@+id/callStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gelen çağrı..."
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:alpha="0.8"
+            android:layout_marginBottom="60dp" />
+
+    </LinearLayout>
+
+    <!-- Bottom action buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="80dp"
+        android:paddingHorizontal="60dp">
+
+        <!-- Reject button -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <View
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/reject_button_bg"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:id="@+id/btnReject"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_call_end_white"
+                android:background="@drawable/reject_button_selector"
+                android:scaleType="center"
+                android:layout_centerHorizontal="true"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reddet"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:layout_below="@id/btnReject"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:alpha="0.9" />
+
+        </RelativeLayout>
+
+        <!-- Accept button -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <View
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/accept_button_bg"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:id="@+id/btnAccept"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_call_white"
+                android:background="@drawable/accept_button_selector"
+                android:scaleType="center"
+                android:layout_centerHorizontal="true"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kabul Et"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:layout_below="@id/btnAccept"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:alpha="0.9" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!-- Slide up hint -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:alpha="0.6">
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="4dp"
+            android:background="@drawable/slide_indicator"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yukarı kaydırın"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

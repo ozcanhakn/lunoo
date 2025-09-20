@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/message"
+        android:title="@string/message"
+        android:icon="@drawable/messageiconwhitee"/>
+
+    <item android:id="@+id/match"
+        android:title="Eşleşme"
+        android:icon="@drawable/match_white_newicon"/>
+
+    <item
+        android:id="@+id/main"
+        android:title="@string/main"
+        android:icon="@drawable/home_white_newicon"/>
+
+    <item
+        android:id="@+id/online"
+        android:title="@string/online"
+        android:icon="@drawable/online_white_newicon"/>
+
+    <item
+        android:id="@+id/profile"
+        android:title="@string/profile"
+        android:icon="@drawable/profilewhite_new_icon"/>
+
+</menu>

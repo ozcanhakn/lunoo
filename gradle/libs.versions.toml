@@ -1,0 +1,42 @@
+[versions]
+agp = "8.5.0"
+billing = "8.0.0"
+expressVideo = "3.18.1"
+filamentAndroid = "1.64.0"
+filamentAndroidVersion = "1.51.5"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+lottie = "3.4.0"
+material = "1.12.0"
+activity = "1.10.0"
+constraintlayout = "2.2.0"
+sceneform = "1.20.5"
+zego_uikit_prebuilt_call_android = "3.9.10"
+cameraView = "1.5.0"
+cameraLifecycle = "1.5.0"
+
+[libraries]
+billing = { module = "com.android.billingclient:billing", version.ref = "billing" }
+express-video = { module = "im.zego:express-video", version.ref = "expressVideo" }
+filament-android = { module = "com.google.android.filament:filament-android", version.ref = "filamentAndroid" }
+filament-android-v1515 = { module = "com.google.android.filament:filament-android", version.ref = "filamentAndroidVersion" }
+filament-utils-android = { module = "com.google.android.filament:filament-utils-android", version.ref = "filamentAndroidVersion" }
+gltfio-android = { module = "com.google.android.filament:gltfio-android", version.ref = "filamentAndroidVersion" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+sceneform = { module = "com.gorisse.thomas.sceneform:sceneform", version.ref = "sceneform" }
+zego_uikit_prebuilt_call_android = { module = "com.github.ZEGOCLOUD:zego_uikit_prebuilt_call_android", version.ref = "zego_uikit_prebuilt_call_android" }
+camera-view = { group = "androidx.camera", name = "camera-view", version.ref = "cameraView" }
+camera-lifecycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "cameraLifecycle" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+

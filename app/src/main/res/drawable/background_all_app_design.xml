@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/gradient_background.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Ana gradient arka plan (üstten alta) -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="270"
+                android:startColor="#0f0d48"
+                android:endColor="#000002" />
+        </shape>
+    </item>
+
+    <!-- Sağ üst büyük radial gradient -->
+    <item
+        android:top="-300dp"
+        android:right="-300dp">
+        <shape android:shape="oval">
+            <size
+                android:width="600dp"
+                android:height="600dp" />
+            <gradient
+                android:type="radial"
+                android:gradientRadius="300dp"
+                android:centerColor="#541266"
+                android:endColor="#00000000" />
+        </shape>
+    </item>
+
+</layer-list>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="8dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/themeColor"
+        android:layout_width="120dp"
+        android:layout_height="160dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="4dp"
+        >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/themeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Varsayılan"
+        android:textSize="15sp"
+        android:textColor="#fff"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:fontFamily="@font/poppins_medium"
+        android:maxWidth="80dp"
+        android:maxLines="1"
+        android:ellipsize="end"/>
+
+</LinearLayout>

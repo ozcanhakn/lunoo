@@ -1,0 +1,216 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Lumoo" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="android:navigationBarColor">#0A1014</item>
+        <item name="android:statusBarColor">#0A1014</item>
+        <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.Lumoo" parent="Base.Theme.Lumoo" />
+
+
+    <!-- HomeActivity için özel tema -->
+    <style name="HomeActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#0A1014</item>
+        <item name="colorPrimaryDark">#0A1014</item>
+        <item name="colorAccent">#0A1014</item>
+        <item name="android:statusBarColor">#0A1014</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+
+    <!-- Modern TextInputLayout Style -->
+    <style name="ModernTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/accent_primary</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxCornerRadiusTopStart">16dp</item>
+        <item name="boxCornerRadiusTopEnd">16dp</item>
+        <item name="boxCornerRadiusBottomStart">16dp</item>
+        <item name="boxCornerRadiusBottomEnd">16dp</item>
+        <item name="hintTextColor">@color/text_tertiary</item>
+        <item name="android:textColorHint">@color/text_tertiary</item>
+        <item name="boxBackgroundColor">@color/surface_glassmorphism</item>
+    </style>
+
+    <!-- Modern Spinner Style -->
+    <style name="ModernSpinner" parent="Widget.AppCompat.Spinner">
+        <item name="android:background">@drawable/modern_input_bg</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">48dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <!-- Modern Button Style -->
+    <style name="ModernButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/modern_gradient_button</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:elevation">12dp</item>
+        <item name="android:stateListAnimator">@animator/button_elevation</item>
+        <item name="cornerRadius">28dp</item>
+    </style>
+
+
+
+    <!-- API 21+ için -->
+    <style name="HomeActivityTheme.V21" parent="HomeActivityTheme">
+        <item name="android:statusBarColor">#0A1014</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+
+
+
+
+
+    <!-- styles.xml dosyanıza bu style'ları ekleyin -->
+
+    <style name="CustomSpinnerStyle" parent="Widget.AppCompat.Spinner">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="CustomSpinnerDropDown" parent="Widget.AppCompat.Spinner.DropDown">
+        <item name="android:background">#2A3040</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Custom Dialog Theme -->
+    <style name="CustomDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:colorAccent">@color/accent_color</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/bounce_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <!-- Enhanced Button Styles -->
+    <style name="PrimaryButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="android:background">@drawable/green_gradient_bg</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:elevation">8dp</item>
+    </style>
+
+    <style name="SecondaryButton" parent="PrimaryButton">
+        <item name="android:background">@drawable/green_gradient_bg</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="FloatingActionButton">
+        <item name="android:layout_width">65dp</item>
+        <item name="android:layout_height">65dp</item>
+        <item name="android:elevation">12dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <!-- Text Styles -->
+    <style name="HeadlineText">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="SubheadlineText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <style name="BodyText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+
+    <style name="CaptionText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_hint</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <!-- Card Styles -->
+    <style name="GlassmorphismCard">
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="android:background">@drawable/glassmorphism_bg</item>
+    </style>
+
+    <style name="ProfileCard" parent="GlassmorphismCard">
+        <item name="cardCornerRadius">25dp</item>
+        <item name="cardElevation">20dp</item>
+        <item name="android:background">@drawable/profile_card_gradient</item>
+    </style>
+
+    <!-- Input Field Styles -->
+    <style name="EnhancedEditText">
+        <item name="android:layout_height">55dp</item>
+        <item name="android:background">@drawable/input_field_bg</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Animation Styles -->
+    <style name="ScaleAnimation">
+        <item name="android:animation">@anim/scale_bounce</item>
+    </style>
+
+    <style name="FadeInAnimation">
+        <item name="android:animation">@anim/fade_in_up</item>
+    </style>
+
+</resources>
+

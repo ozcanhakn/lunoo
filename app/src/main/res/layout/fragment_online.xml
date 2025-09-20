@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OnlineFragment"
+    >
+
+   <!-- Ana gradient arka plan -->
+   <View
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="@drawable/main_gradient" />
+
+   <!-- Radial gradient view - sağ üstte sabit boyutta -->
+   <View
+       android:layout_width="400dp"
+       android:layout_height="400dp"
+       android:layout_gravity="top|end"
+       android:layout_marginTop="-200dp"
+       android:layout_marginEnd="-200dp"
+       android:background="@drawable/radial_gradient" />
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+
+   <androidx.cardview.widget.CardView
+       android:id="@+id/searchCardView"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_alignParentTop="true"
+       android:layout_margin="10dp"
+       app:cardCornerRadius="8dp"
+       app:cardElevation="8dp"
+       app:cardBackgroundColor="#21272B">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:orientation="horizontal"
+          android:background="@drawable/search_bg_bg"
+          android:padding="1dp"
+          android:gravity="center_vertical">
+
+         <ImageView
+             android:layout_width="24dp"
+             android:layout_height="24dp"
+             android:src="@drawable/ic_baseline_search_24"
+             android:layout_marginStart="8dp"
+             android:layout_marginEnd="12dp"
+             app:tint="#666666" />
+
+         <EditText
+             android:id="@+id/searchEditText"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:background="@null"
+             android:hint="Kullanıcı ara..."
+             android:textColor="#fff"
+             android:textColorHint="#ababab"
+             android:textSize="16sp"
+             android:fontFamily="@font/poppins_medium"
+             android:inputType="text"
+             android:maxLines="1"/>
+
+      </LinearLayout>
+
+   </androidx.cardview.widget.CardView>
+
+   <!-- Online Users Count -->
+   <androidx.cardview.widget.CardView
+       android:id="@+id/onlineCountCard"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/searchCardView"
+       android:layout_alignParentEnd="true"
+       app:cardCornerRadius="8dp"
+       android:layout_marginEnd="10dp"
+       android:layout_marginStart="10dp"
+       app:cardElevation="8dp"
+       app:cardBackgroundColor="#1A1F2E">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@drawable/orange_purple_gradient">
+
+
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:padding="12dp"
+          android:gravity="center_vertical">
+
+         <View
+             android:layout_width="8dp"
+             android:layout_height="8dp"
+             android:background="@drawable/online_indicator"
+             android:layout_marginEnd="8dp"/>
+
+         <TextView
+             android:id="@+id/txtOnlineCount"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="0 Online"
+             android:textColor="#4ADE80"
+             android:textSize="14sp"
+             android:fontFamily="@font/poppins_bold"/>
+
+      </LinearLayout>
+      </LinearLayout>
+
+
+   </androidx.cardview.widget.CardView>
+
+   <!-- Progress Bar -->
+   <ProgressBar
+       android:id="@+id/progressBar"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+       android:visibility="gone"
+       android:translationZ="180dp"
+       android:indeterminate="true" />
+
+   <!-- RecyclerView for users -->
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/recOnline"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_below="@id/onlineCountCard"
+       android:padding="8dp"
+       android:clipToPadding="false"/>
+   </RelativeLayout>
+
+</FrameLayout>

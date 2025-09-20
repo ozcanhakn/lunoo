@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+
+    <color name="gift_primary_color">#FF6B35</color>
+    <color name="gift_secondary_color">#6C757D</color>
+    <color name="gift_text_color">#212529</color>
+    <color name="gift_background">#F8F9FA</color>
+    <color name="gift_border">#E9ECEF</color>
+    <color name="gift_success">#28A745</color>
+    <color name="black_overlay">#80000000</color>
+    <color name="gift_warning">#FFC107</color>
+
+
+    <color name="white_transparent">#80FFFFFF</color>
+    <color name="pink_transparent">#80FF6B9D</color>
+    <color name="yellow_transparent">#80FFD700</color>
+    <color name="text_dark">#333333</color>
+    <color name="shadow_color">#40000000</color>
+
+
+    <color name="gray">#808080</color>
+    <color name="gray_light">#E0E0E0</color>
+    <color name="green">#4CAF50</color>
+    <color name="red">#F44336</color>
+
+    <!-- Call button colors -->
+    <color name="accept_color">#4CAF50</color>
+    <color name="decline_color">#F44336</color>
+
+    <!-- Background colors -->
+    <color name="call_background">#F5F5F5</color>
+    <color name="dialog_background">#FFFFFF</color>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Primary Colors -->
+    <color name="primary_dark">#0A0E13</color>
+    <color name="primary_surface">#151921</color>
+
+    <!-- Accent Colors -->
+    <color name="accent_primary">#4CAF50</color>
+    <color name="accent_primary_dark">#388E3C</color>
+    <color name="accent_secondary">#81C784</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B3FFFFFF</color>
+    <color name="text_tertiary">#80FFFFFF</color>
+    <color name="text_hint">#66FFFFFF</color>
+
+    <!-- Surface Colors -->
+    <color name="surface_glassmorphism">#20FFFFFF</color>
+    <color name="surface_glassmorphism_border">#30FFFFFF</color>
+
+    <!-- Status Colors -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FF9800</color>
+    <color name="error">#F44336</color>
+
+    <!-- Gradient Colors -->
+    <color name="gradient_start">#4CAF50</color>
+    <color name="gradient_end">#388E3C</color>
+
+
+
+    <!-- Primary Colors -->
+    <color name="primary_gradient_start">#FF6B9D</color>
+    <color name="primary_gradient_end">#C44CEA</color>
+    <color name="accent_color">#FF4081</color>
+    <color name="secondary_color">#2196F3</color>
+
+    <!-- Background Colors -->
+    <color name="background_primary">#0A0A0F</color>
+    <color name="background_secondary">#1A1A2E</color>
+    <color name="background_tertiary">#16213E</color>
+
+
+    <color name="text_error">#FF5252</color>
+    <color name="text_success">#4CAF50</color>
+
+    <!-- Glassmorphism Colors -->
+    <color name="glass_background">#20FFFFFF</color>
+    <color name="glass_border">#30FFFFFF</color>
+    <color name="glass_shadow">#40000000</color>
+
+    <!-- Button Colors -->
+    <color name="button_primary_start">#FF6B9D</color>
+    <color name="button_primary_end">#C44CEA</color>
+    <color name="button_secondary_start">#2196F3</color>
+    <color name="button_secondary_end">#3F51B5</color>
+    <color name="button_success_start">#4CAF50</color>
+    <color name="button_success_end">#2E7D32</color>
+    <color name="button_warning_start">#FF9800</color>
+    <color name="button_warning_end">#FF5722</color>
+
+    <!-- Status Colors -->
+    <color name="online_status">#4CAF50</color>
+    <color name="away_status">#FF9800</color>
+    <color name="offline_status">#9E9E9E</color>
+
+    <!-- Utility Colors -->
+    <color name="semi_transparent">#80000000</color>
+    <color name="divider">#20FFFFFF</color>
+
+
+
+
+
+
+    <!-- Primary Colors -->
+    <color name="primary_accent">#ff6b6b</color>
+    <color name="primary_accent_alpha">#33ff6b6b</color>
+
+    <!-- Button Colors -->
+    <color name="camera_button_bg">#4facfe</color>
+    <color name="gallery_button_bg">#a8edea</color>
+
+    <!-- Background Colors -->
+    <color name="glass_bg">#1AFFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="white_alpha_80">#CCFFFFFF</color>
+    <color name="white_alpha_60">#99FFFFFF</color>
+
+    <!-- Gradient Colors -->
+    <color name="gradient_start_story">#667eea</color>
+    <color name="gradient_center">#764ba2</color>
+    <color name="gradient_end_story">#f093fb</color>
+
+
+</resources>
